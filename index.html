@@ -2,90 +2,89 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pathlit - Coming Soon</title>
     <style>
-        body { margin: 0; padding: 0; }
-        html { height: 100%; cursor: default; }
         body {
-            font-family: "Roboto", sans-serif; /* Default font */
-            width: 100%; height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* This aligns items vertically */
             text-align: center;
-            display: table;
-            opacity: 1;
-            animation: fadein 3s forwards;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #fff;
+            animation: fadein 2s;
         }
+
+        html {
+            height: 100%; /* Ensure the full height of the page is used */
+        }
+
+        #main {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-weight: 400;
+            margin-top: 0;
+        }
+
         h2 {
             font-weight: 300;
             margin-bottom: 25px;
         }
-        img {
-            width: 25%; /* Image width */
-            border: 0; /* For IE */
-            /* Aspect ratio of image, gives initial dimension to prevent text moving down once image is loaded */
-            /* When changing logo, change this also */
-            aspect-ratio: 125 / 50;
-        }
-        #main {
-            vertical-align: middle;
-            display: table-cell;
-        }
-        /* Progress bar */
+
         #progress {
-            width: 45%; /* Bar width */
-            margin: 0 auto;
-            border-radius: 10px; /* Roundness */
-            background-color: #a8a8a8; /* Background colour */
-            padding: 7px 5px;
-            /* border: 5px solid #a8a8a8; Border */
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
         }
+
         #fill {
-            padding: 2px 0;
-            background-color: #00b98b; /* Fill colour */
-            width: 35%; /* Bar percentage, change text below also */
-            border-radius: 25px; /* Roundness */
-            animation: proanimate 2s;
-        }
-        #barpercent h3 {
-            color: white; /* Bar percentage text colour */
-            margin: 0; padding: 0;
-            opacity: 1;
-            animation: fadein 3s forwards;
+            background-color: #00b98b;
+            width: 32%;
+            height: 20px;
+            border-radius: 10px;
+            transition: width 2s ease;
         }
 
-        /* Fades in animation */
-        @keyframes fadein  {
+        @keyframes fadein {
             from { opacity: 0; }
-        }
-        /* Animates bar on page load */
-        @keyframes proanimate {
-            from { width: 0%; }
+            to { opacity: 1; }
         }
 
-        @media screen and (max-width:600px) {
-            img {
-                width: 60%;
-            }
-            h1 {
-                font-size: 1.3em;
-            }
-            h2 {
-                margin: 1.1em;
-                font-size: 1.1em;
-            }
-            #progress {
-                width: 80%; /* Bar width */
-            }
+        @media screen and (max-width: 768px) {
+            img { max-width: 80%; }
+            #progress { width: 90%; }
         }
     </style>
-    <title>Coming Soon</title>
 </head>
 <body>
     <div id="main">
         <img src="logo.png" alt="Logo Image">
-        <h1>Company Name</h1>
-        <h2>Our website is currently under construction. </h2>
-        <div id="progress"><div id="fill"><div id="barpercent"><h3>35%</h3></div></div></div>
+        <h1>Pathlit</h1>
+        <h2>Our website is currently under construction.</h2>
+        <div id="progress">
+            <div id="fill"></div>
+        </div>
+        <p>32% Complete</p>
     </div>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </body>
